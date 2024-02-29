@@ -15,4 +15,3 @@
             </properties>
         </action>
     </actions>
-WITH cte AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY DocumentID ORDER BY DateCreated DESC) AS rn FROM DocumentStatusLogs ) SELECT * FROM cte WHERE rn = 1
